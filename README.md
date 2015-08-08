@@ -9,6 +9,7 @@ unzip(file, success, error)
 ##Entry
 A single entry object has the following properties:
 - name: the zip entry name, i.e. the file path
+
 and the following methods:
 - toString(): returns the content of the entry as a String
 - toBlob(): returns the content of the entry as a Blob
