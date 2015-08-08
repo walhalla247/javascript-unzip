@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>UnZip</title>
+<script type="text/javascript" src="js/unzip.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+		document.querySelector("input").addEventListener("change", function(e) {
+			var file = e.target.files[0];
+			function success(entries) {
+			  //traverse entries by name
+		    for (var name in entries) {
+		      console.log("Found entry: " + name);
+		    }
+		    //access single entry
+		    var entry = entries["test.txt"];
+		    if (entry) {
+		      //decompress text
+		      var text = entry.toString();
+		      document.querySelector("p").textContent = text;
+		    }
+		    entry = entries["test.jpg"];
+		    if (entry) {
+		      //decompress blob
+		      var blob = entry.toBlob();
+		      document.querySelector("img").src = URL.createObjectURL(blob);
+		    }
+			}
+			function error(errorText) {
+			  alert("An error occured: " + errorText);
+			}
+		  unzip(file, success, error);
+		}, false);
+  };
+</script>
+</head>
+<body>
+  <h3>Try to open the test.zip file ...</h3>
+  <input type="file">
+  <hr>
+  <p></p>
+  <img>
+</body>
+</html>
