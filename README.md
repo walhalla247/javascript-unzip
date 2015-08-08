@@ -1,5 +1,5 @@
 # javascript-unzip
-A javascript function to decompress zip content
+A javascript function to decompress zip content. The inflate algorithm is optimized for performance.
 ##usage
 unzip(file, success, error)
 - file: a File/Blob (see index.html) or a ArrayBuffer instance
