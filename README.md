@@ -34,3 +34,5 @@ and the following methods:
 
 	unzip(file, success, error); // file from input e.g.
 
+##About
+This javascript function was written by Alexander Schönberg walhalla247@gmail.com as part of a ebook speed reader for a Firefox OS App. Thanks to Tobias Röding, who inspired me to publish this tool to github.
